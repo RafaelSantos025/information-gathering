@@ -5,7 +5,17 @@ then
 echo "ROOT Permission is necessary"
 exit 0
 else
-echo "∗ ROOT ⊕"
+echo "∗ User Root !"
+fi
+
+DIR=wordlists/
+FILE=subdomains.txt
+if [ -e "$DIR$FILE" ]
+then
+echo "∗ Wordlist Exist !"
+else
+echo "!!! Missing wordlists/subdomains.txt !!!"
+exit 0
 fi
 
 echo 'Dir-Output: '
@@ -39,10 +49,10 @@ host $word.$dominio >> $output/subdomains.txt
 done
 echo "∗ SUBDOMAINS ⊕"
 
-echo "Realizando reconhecimento de portas ... (pode demorar)"
+echo "Realizando reconhecimento de portas e servicos ... (pode demorar)"
 nmap -sS -sV $dominio > $output/nmap.txt
 echo "∗ NMAP ⊕"
 
 echo "[!] Information gathering complete [!]"
-
+echo "[*] Arquivos salvos no Dir-Output [*]"
 
