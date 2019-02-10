@@ -13,4 +13,7 @@ SQLMap
 Como Normalmente uso estes programinhas para uma coleta de informações mais superficial, decidi desenvolver um script para automatizá-los e compartilhar com vocês =)
 
 Para ultiliza-lo e simples:
+
 :~$ ./info-gathering.sh
+
+E então todas as informações serão salvas em aquivos.txt
