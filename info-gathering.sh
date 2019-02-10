@@ -42,8 +42,8 @@ echo "<------------------------------------------->" >> $output/waf.txt
 sqlmap --identify-waf -u $dominio --answers=follow=y >> $output/waf.txt
 echo "∗ WAF ⊕"
 
-echo "Realizando Brute-Force ..."
-for word in $( wordlists/subdomains.txt )
+echo "Realizando Brute-Force de Subdominios ..."
+for word in $( cat wordlists/subdomains.txt )
 do
 host $word.$dominio >> $output/subdomains.txt
 done
@@ -55,4 +55,5 @@ echo "∗ NMAP ⊕"
 
 echo "[!] Information gathering complete [!]"
 echo "[*] Arquivos salvos no Dir-Output [*]"
+
 
